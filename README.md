@@ -2,7 +2,7 @@
 
 ## 🚀Introduction
 
-### What is React? What is the Role of React in software development?
+#### What is React? What is the Role of React in software development?
 
 React is an open-source JavaScript library for building user interfaces based on UI components. It is created and maintained by Facebook and was released in 2013.
 
