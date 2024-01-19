@@ -1,6 +1,6 @@
 # React Interview Questions & Answers
 
-## Introduction
+## 🚀Introduction
 
 ### What is React? What is the Role of React in software development?
 
@@ -119,7 +119,7 @@ React is a JavaScript library, whereas Angular is a front-end framework.
 
 ### How React provides Reusability and Composition?
 
-## Files & Folders
+## 📁Files & Folders
 
 ### What is NPM? What is the role of node_module folder?
 
@@ -149,7 +149,7 @@ React is a JavaScript library, whereas Angular is a front-end framework.
 
 ### What is the use of the react-dom package?
 
-## JSX
+## ⚡JSX
 
 ### What is JSX?
 
@@ -210,7 +210,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### What is the difference between cloneElement and createElement?
 
-## Components
+## 🎨Components
 
 ### What are React Components? What are the main elements of it?
 
@@ -252,7 +252,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### Why should we use functional components over the class component?
 
-## State
+## 🧱State
 
 ### What are the State in React?
 
@@ -268,7 +268,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### What will happen if you use setState() in constructor?
 
-## Props
+## 🎸Props
 
 ### What are the Props in React?
 
@@ -286,7 +286,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### Why can't you Update Props in React?
 
-## Hooks
+## 🎉Hooks
 
 ### What are React Hooks? What are the Top React Hooks?
 
@@ -348,7 +348,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### When were the React Hooks introduced first?
 
-## Routing
+## 🚴Routing
 
 ### What is Routing and Router in React?
 
@@ -366,7 +366,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### How Routing is different from Conventional Routing in React?
 
-## Component LifeCycle Methods
+## ✈️Component LifeCycle Methods
 
 ### What are Component LifeCycle methods?
 
@@ -384,7 +384,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### What are the Lifecycle of Functional Components?
 
-## Rendering & DOM Elements
+## ⛹️Rendering & DOM Elements
 
 ### How does Rendering work in React?
 
@@ -425,7 +425,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### Difference between React memo and PureComponents?
 
-## Events
+## 📅Events
 
 ### What is an Event in React?
 
@@ -437,7 +437,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### What is the meaning of Synthetic Events in React?
 
-## Code Splitting
+## 🍠Code Splitting
 
 ### What is Code Splitting in React and why do we use it?
 
@@ -453,7 +453,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### What is Router Based Code Splitting & Lazy Loading with react router?
 
-## State Management
+## 🌐State Management
 
 ### How many Types of States in React?
 
@@ -475,7 +475,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### Ways to achive state management? When to use in React?
 
-## API Data Fetching
+## 📡API Data Fetching
 
 ### How to Fetch API in React?
 
@@ -489,7 +489,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### Can Ajax be used in React?
 
-## Testing, Debugging & Deployment
+## 🐜Testing, Debugging & Deployment
 
 ### What is Unit Testing & why its useful?
 
@@ -509,7 +509,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### How to set React to Production Build?
 
-## Advanced
+## 💪Advanced
 
 ### What is Higher Order Components (HOC) in React?
 
@@ -559,7 +559,7 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### How to pass data from child component to parent component in React?
 
-## Redux
+## ⚡Redux
 
 ### What is Redux?
 
@@ -623,6 +623,6 @@ Browsers can't read JSX files directly. They must be transpiled or converted to 
 
 ### What is the difference between Flux & Redux?
 
-## TypeScript
+## 💡TypeScript
 
 ### What is TypeScript?
