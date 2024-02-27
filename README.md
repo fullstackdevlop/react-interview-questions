@@ -1085,6 +1085,12 @@ const App = () => (
 
 ### How many Types of States in React?
 
+In React, there are two types of states: **local state** and **global state**.
+
+- Local state is managed and used within that specific component. It cannot shared with other components. In functional components we use **useState** hook & for class components use **this.state** and **this.setState** methods.
+
+- Global state refers to the state that is shared and accessible across multiple components in a React application. Global state management can be achieved using various techniques, such as Context API, Redux or other libraries.
+
 ### How to Update State in functional component?
 
 To update state in a React using the functional components, you can use the **useState()** hook.
@@ -1140,7 +1146,19 @@ This is done to make the state more easily accessible and manageable for the ent
 
 ### What is the difference between Local State & Global State in React?
 
+- Local state is managed and used within that specific component. It cannot shared with other components. In functional components we use **useState** hook & for class components use **this.state** and **this.setState** methods.
+
+- Global state refers to the state that is shared and accessible across multiple components in a React application. Global state management can be achieved using various techniques, such as Context API, Redux or other libraries.
+
 ### How many ways to Manage Global State?
+
+There are several ways to manage global state in a React application that depends on the complexity of your application.
+
+- **Context API**: The Context API is part of React and provides a way to share values like state between components without having to pass props through each level of the component tree.
+
+- **Redux**: Redux is a popular state management library for managing larger and more complex global state in React applications.
+
+> You can choose other libraries such as MobX, Recoil, React Query etc.
 
 ### What is the Context API in React?
 
@@ -1158,13 +1176,62 @@ The Context API is a way to share data with multiple components, without passing
 
 ### How to Fetch API in React?
 
+Fetching API data in a React application can be done using the fetch function or by using third-party libraries like Axios.
+
+If you need a lightweight solution and are working in a modern environment, fetch() might be sufficient for simple use cases but If you prefer a more feature-rich and consistent API, with built-in error handling, interceptors, cancellation, and all browser support, Axios is a popular choice.
+
+> If you required data fetching with caching, state management & easily error handling then you can also use React Query.
+
 ### How to handle Api Error in React?
+
+Handling API errors in React involves capturing and managing errors during making HTTP requests to an API. There are common approaches to handle API errors in a React application:
+
+- Try-Catch with Async/Await
+- Promises with .then() and .catch()
 
 ### What is difference between Fetch and Axios for api call in React?
 
-### What is React Query Library & its advantages?
+Fetch is a native JavaScript interface and Axios is JavaScript libraries. Both are used for making HTTP requests in web applications, including React. But there are some key differences between them such as:
+
+- Fetch is part of the JavaScript language and available globally in modern browsers while Axios is library that need to be installed separately.
+- Fetch returns a Promise that resolves to the Response object, requiring additional steps to extract data while Axios returns a Promise that resolves to the response data directly.
+- Fetch considers network errors, but it does not reject the Promise for HTTP error status codes (e.g., 404 or 500) while Axios rejects the Promise for HTTP error status codes, making it easier to handle errors directly in the .catch() block.
+- Fetch does not provide built-in request and response interceptors while Axios allows the use of interceptors for both requests and responses, providing a convenient way to modify or handle requests and responses globally.
+- Fetch does not have built-in support for request cancellation while Axios supports request cancellation, allowing you to cancel ongoing requests using a cancellation token.
+- Fetch requires more manual configuration for common tasks, such as setting headers or handling cookies while Axios provides a simple way to set default configurations for all requests, reducing redundancy in the code.
+- Fetch follows the same-origin policy, and CORS-related headers need to be handled manually while Axios automatically includes credentials and handles CORS headers by default.
+- Fetch built into modern browsers while Axios compatible with all major browsers.
+- If you need a lightweight solution and are working in a modern environment, fetch() might be sufficient for simple use cases but If you prefer a more feature-rich and consistent API, with built-in error handling, interceptors, cancellation, and all browser support, Axios is a popular choice.
+
+### What is React Query Library?
+
+React Query is a popular JavaScript library for managing and caching server state in React applications.
+It provides a set of hooks and utilities that simplify data fetching, caching, and state management in a declarative and efficient way.
+
+### What is React Query advantages?
+
+There are some advantage of React Query:
+
+- React Query uses a declarative approach to data fetching with the use of hooks like useQuery and useMutation. This simplifies the process of fetching and updating data in React components.
+- React Query automatically caches API responses based on the query key and parameters. Cached data is stored in memory and can be easily invalidated or refetched when needed.
+- Supports optimistic updates, allowing you to update the UI optimistically based on user actions before receiving the response from the server.
+- Provides built-in support for pagination and infinite loading, making it easy to implement features like "Load More" or infinite scroll.
+- Supports automatic refetching of data at configurable intervals, ensuring that the UI stays up-to-date with the latest server data.
+- Designed with server-side rendering & support for fetching data on the server before rendering on the client. This helps improve the performance of server-rendered pages.
 
 ### How to manage API Cache in React?
+
+Managing API cache in a React application can help improve performance by avoiding unnecessary network requests and reducing server load. There are various approaches to API caching, and the choice depends on the specific requirements of your application.
+
+- Use HTTP Caching headers that include Cache-Control. The browser automatically handles caching based on these headers.
+
+```javascript
+<meta http-equiv="Cache-control" content="public">
+```
+
+- Use state management libraries like Redux or context API to store and manage cached data.
+- Use library like React Query that provide built-in caching mechanisms for API data.
+- If you are using Axios for API requests, you can use **Axios cache adapters** to handle caching.
 
 ### Can Ajax be used in React?
 
@@ -1174,17 +1241,94 @@ Yes, Any Ajax library like axios, jQuery Ajax can be used with react.
 
 ### What is Unit Testing & why its useful?
 
+Unit tests are designed to test single units of code in isolation. Unit testing helps catch bugs early, reducing the overall cost of software development and improve code quality.
+
 ### What are the popular Testing Libraries for React?
+
+Testing is an important part of software development. React has several popular testing libraries and tools to help developers write effective unit, integration, and end-to-end tests.
+
+But Jest is a comprehensive JavaScript testing framework developed by Facebook. It is widely used for testing React applications.
 
 ### What is Jest Library?
 
+Jest is a JavaScript testing framework developed by Facebook. It is widely used for testing JavaScript code, including React applications.
+
+- Jest is known for its simplicity, speed, and developer-friendly features.
+- Jest is often used with React Testing Library, making it easy to write tests for React components using a simple and intuitive API.
+
 ### How to debug react application?
+
+Debugging a React application involves identifying and fixing errors in your code. There are several techniques and tools you can use to debug a React application effectively:
+
+- Open browser **console** to view logged messages, errors, and warnings.
+- Add the React Developer tools browser extension.
+- Add **console.log** statements in your React components to output variable values or messages to the console.
+- Use React error boundaries to catch and handle errors in specific components.
+- Use the React Profiler (available in React Developer Tools) to profile the performance of your components and identify areas for optimization.
+- Check the "Network" tab in your browser's developer tools to inspect network requests and responses. This can help identify issues related to API calls or data fetching.
+- Use ESLint and other analysis tools to catch potential issues in your code before runtime.
 
 ### What is React Developer tool?
 
+React Developer Tools is a browser extension that provides a set of debugging and profiling tools for React applications.
+
+It help developers inspect React component hierarchies, track component state and props, debug the application, and analyze performance.
+
+> React Developer Tools can also help inspect the Redux state and actions.
+
 ### What is the Environment File & its benifit?
 
+An environment file refers to a configuration file that contains environment-specific settings and variables. It is used store configuration settings related to development, production, and other environments.
+
+There are some benifits:
+
+- Its simplyfy the development
+- Dynamic configuration for multiple environments
+- Secure sensitive information, such as API keys or database credentials.
+
 ### How to use Environment Files (.env) in React App?
+
+You can use environment files (.env) to manage environment-specific configuration variables in react application.
+
+- First create an environment file in the root of your React project.
+
+```javascript
+REACT_APP_API_URL=https://api.example.com
+```
+
+- Access environment variables in code with prefixed `process.env`
+
+```javascript
+const apiUrl = process.env.REACT_APP_API_URL;
+```
+
+- Restart the development sever
+
+### How to set Environment Files (.env) for development & production in React App?
+
+You can set environment variables for development and production by using environment-specific files and the `REACT_APP_` prefix.
+
+- Create two environment files in the root of your React project:
+  - .env.development for development
+  - .env.production for production
+
+```javascript
+// .env.development:
+REACT_APP_API_URL=http://localhost:3001
+REACT_APP_ENVIRONMENT=development
+
+// .env.production
+REACT_APP_API_URL=https://api.example.com
+REACT_APP_ENVIRONMENT=production
+```
+
+- Access environment variables in code with prefixed `process.env`
+
+- When you running your development server using **npm start** then react will automatically use **env.development** and when deploying your app using "npm run build" for production, React will use **.env.production** file.
+
+### Should we commit .env files to version control?
+
+Do not commit your **.env** files to version control, especially if they contain sensitive information. Instead, provide a template (e.g., .env.example) with placeholder values.
 
 ### What is Bundling in React and why do we use it?
 
@@ -1195,6 +1339,14 @@ This is typically done to optimize the performance of web applications by reduci
 > Webpack is a highly configurable bundler tool that can handle not only JavaScript files but also various assets like stylesheets and images.
 
 ### How to set React to Production Build?
+
+Setting up a React application for production involves optimizing the build for **performance, enabling production-specific settings, and ensuring security**. There are some general steps to set up a React production build:
+
+- Enable environment variables for production
+- Remove Debugging code
+- Testing the application
+- Make build of react application
+- Deploy to your production server
 
 ## 💪Advanced
 
