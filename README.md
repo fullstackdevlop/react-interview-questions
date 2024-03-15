@@ -99,17 +99,37 @@ function Greeting() {
 
 ### What are the Main Files in a React project?
 
+React has some files that are typically the foundation of a React application like:
+
+- **index.html:** This is main HTML file of our app. It include the root **<div>** element where your React components will be rendered.
+- **index.js:** Its JavaScript entry point of your React application, which renders the root React component(App) into the DOM.
+- **App.js:** This is usually the main React component of your application. It contains the structure and logic of your app, including the rendering of other components.
+- **index.css:** The main CSS file for styling your React components.
+- **package.json:** This file contains metadata about the project, including dependencies, scripts, and other configurations. It's used by npm to manage project dependencies and scripts.
+- **node_modules:** The folder where all the project dependencies are stored. This folder is generated and managed by npm or yarn.
+
 ### How React App Load and Display the components in browser?
 
 ### What are the difference between React and Angular?
 
+React and Angular both are used to create single page UI application using components.
+
+- React is a JavaScript library while Angular is a complete framework.
+- React uses a virtual DOM which makes it faster while Angular uses a real DOM.
+- React is smaller in size and lightweight so its faster sometime while Angular is bigger because it is a complete framework.
+- React depends on external libraries for many complex features, so developer has to write many lines of code for complex functionalities while Angular is a complete framework, therefore it provide build-in-support for features like routing, forms, validation and HTTP requests.
+- React is simple to learn and more popular than Angular while Angular is slightly difficult to learn as it has Typescript, OOPS concept and many more thing.
+
 ### Why use React instead of other frameworks, like Angular?
 
-React is a JavaScript library, whereas Angular is a front-end framework.
+React and Angular are both popular JavaScript frameworks for building web applications, but they have different approaches and philosophies. There are some reasons why you might choose React over Angular:
 
-- React uses one-way data binding and virtual DOM, whereas Angular uses two-way data binding and real DOM.
-- React is faster than Angular as it has a smaller bundle size.
-- React is developed by Facebook, whereas Angular is developed by Google.
+- **Component-Based Architecture:** React is known for its component-based architecture. This approach promotes reusability, modularity and making it easier to maintain large scale applications.
+- **Virtual DOM:** Instead of directly manipulating the actual DOM, React compares the Virtual DOM with the real DOM and only applies the necessary changes. This leads to better performance and a smoother user experience, especially in complex applications.
+- **Flexibility and Lightweight:** React is more lightweight and flexible compared to Angular. It allowing developers to choose their preferred tools and libraries for state management, routing, and other functionalities. This flexibility can be advantageous for projects with specific requirements.
+- **JSX Syntax:** React uses JSX (JavaScript XML) syntax, which allows developers to write HTML-like code directly within JavaScript. This makes the code more readable and intuitive, especially for developers familiar with HTML.
+- **Community and Ecosystem:** React has a large and active community, with extensive documentation, tutorials, and third-party libraries available.
+- **Performance Optimization:** ReactJS is a high-performance library for creating user interfaces. This feature makes it much better than other frameworks. The reason behind, it manages a virtual DOM & use JSX which is faster compared to normal JavaScript and HTML.
 
 ### What are other 5 JS Frameworks other than React?
 
@@ -123,13 +143,31 @@ There are several JavaScript frameworks and libraries for building web applicati
 
 ### Whether React is a Framework or a Library? What is the difference?
 
+React is commonly referred to as a JavaScript library, not a framework.
+
+- **Library:** Developers import the libraries at the top and then used its function in components.
+- **Framework:** Developers need to follow a specific structure or pattern defined by the framework.
+
 ### What is the difference between library and framework?
 
+A library is a collection of reusable code modules or functions that provide specific functionality. It is designed to be used as-needed in various parts of an application.
+
+A framework is a comprehensive set of pre-built tools, libraries, and conventions that provide a structured approach to building applications. It typically imposes a particular architecture or design pattern on the application.
+
 ### How React provides Reusability and Composition?
+
+React provides reusability and composition through its component-based architecture.
+
+- **Reusability:** Once you create a component, you can re-use it in different parts of your application or even in different applications.
+- **Composition:** Composition is creating new and big components by combining existing small components. This allows developers to create complex UIs by combining simpler, reusable components.
 
 ## 📁Files & Folders
 
 ### What is NPM? What is the role of node_module folder?
+
+NPM(Node Package Manager) is a powerful package manager for Node.js that used to manage the dependencies for your React application, including the React library itself.
+
+The **node_modules** folder contains all the dependencies of the project, including the React libraries. Its plays a crucial role in organizing and managing project dependencies.
 
 ### What is the difference between NPM & NPX?
 
@@ -139,15 +177,35 @@ There are several JavaScript frameworks and libraries for building web applicati
 
 ### What is the role of public folder in React?
 
+Public folder in a React application serves as the container for static assets and the HTML entry point for your application. The primary role of the public folder is to hold assets such as HTML files, images, fonts, and other static files needed for your React application.
+
 ### What is the role of src folder in React?
+
+**src** folder is the heart of your React application where you write, organize, and maintain the JavaScript files that contain your React components, application logic, and other related code.
 
 ### What is the role of index.html page in React?
 
+The **index.html** file plays a crucial role as the entry point for the application in the browser. It serves as the HTML template that contains the root DOM element where the React application will be rendered.
+
 ### What is the role of index.js file and ReactDOM in React?
+
+The **index.js** file is typically the entry point for the React application. Its replaces the root element of the index.html file with the newly rendered components.
+
+**ReactDOM** is a JavaScript library that used to render React components into the DOM and manage their lifecycle.
 
 ### What is the role of App.js file in React?
 
+- The **App.js** file typically serves as the root component of the React application.
+- App component is like a container for other components, such as navigation bars, headers, footers, and sidebars, as well as the main content area of the application.
+- App component defines the structure, top-level layout, state management and routing in the application.
+
 ### What is the role of function and return inside App.js?
+
+The Function keyword is used to define a JavaScript function that represents your React components.
+
+The Function is like a placeholder which contains all the code or logic of component.
+
+The Function takes in props as its argument and return JSX.
 
 ### Can we have a function without a return inside App.js?
 
@@ -409,6 +467,12 @@ State is an object that is used to store the data or information about the compo
 - Class components use the **this.state** syntax, while functional components use the **useState** hook to achieve state functionality.
 
 ### What are State, Stateless, Stateful and State Management terms?
+
+**State** represents the current data of a system.
+
+**stateless** and **stateful** components describe whether a component manages its own state.
+
+**State management** refers to the process of managing and updating application state in a systematic and scalable way.
 
 ### What are Stateful components in React?
 
@@ -1146,15 +1210,15 @@ This is done to make the state more easily accessible and manageable for the ent
 
 ### What is the difference between Local State & Global State in React?
 
-- Local state is managed and used within that specific component. It cannot shared with other components. In functional components we use **useState** hook & for class components use **this.state** and **this.setState** methods.
+- **Local state** is managed and used within that specific component. It cannot shared with other components. In functional components we use **useState** hook & for class components use **this.state** and **this.setState** methods.
 
-- Global state refers to the state that is shared and accessible across multiple components in a React application. Global state management can be achieved using various techniques, such as Context API, Redux or other libraries.
+- **Global state** refers to the state that is shared and accessible across multiple components in a React application. Global state management can be achieved using various techniques, such as Context API, Redux or other libraries.
 
 ### How many ways to Manage Global State?
 
 There are several ways to manage global state in a React application that depends on the complexity of your application.
 
-- **Context API**: The Context API is part of React and provides a way to share values like state between components without having to pass props through each level of the component tree.
+- **Context API**: The Context API is part of React and provides a way to share values like state between components without passing props manually at every level.
 
 - **Redux**: Redux is a popular state management library for managing larger and more complex global state in React applications.
 
@@ -1170,7 +1234,13 @@ The Context API is a way to share data with multiple components, without passing
 
 ### What is the difference between Context API and Redux?
 
-### Ways to achive state management? When to use in React?
+The Context API and Redux are both state management solutions in React, but they have some differences such as:
+
+- Context API is part of the React library that provides a way to pass data in components but Redux is a third-party library that provides a centralized approach to managing data flow in your application.
+- Context is designed for managing smaller amounts of state means it's suitable for simpler scenarios where a global state is necessary but Redux is designed for managing larger and more complex state in a predictable way.
+- Context is easier to set up and use but Redux required extensive setup to integrate with a React Application.
+- Context debugging can be hard in highly nested React Components but Redux provide powerful Redux Dev Tool to easy debugging and also provide middleware system.
+- Context managing state for smaller to medium-sized applications but Redux managing state for larger applications with complex state requirements.
 
 ## 📡API Data Fetching
 
