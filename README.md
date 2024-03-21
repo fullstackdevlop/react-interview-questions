@@ -110,6 +110,17 @@ React has some files that are typically the foundation of a React application li
 
 ### How React App Load and Display the components in browser?
 
+When a React application is loaded and rendered in the browser, the following sequence of events typically occurs:
+
+- **Initial Rendering:** The browser loads the HTML file containing the root div element.
+- **ReactDOM.render():** The entry point of the React application (usually index.js) calls
+  `ReactDOM.render()` method, passing the root component (e.g., <App />) and the target DOM element (the root div element).
+- **Component Tree Construction:** React starts constructing the component tree by creating an instance of the root component (<App />).
+- **Render Phase:** Once the component tree is constructed, React enters the render phase. The `render()` method or the functional component **returns** a React element describing what should be rendered on the screen.
+- **Reconciliation:** After the render phase, React performs reconciliation, which is the process of comparing the newly rendered React elements with the previously rendered elements.
+- **Commit Phase:** React applies the calculated changes to the DOM, making the necessary updates to the browser's rendered output.
+- **Browser Painting:** After React updates the DOM, the browser repaints the updated portions of the UI on the screen.
+
 ### What are the difference between React and Angular?
 
 React and Angular both are used to create single page UI application using components.
@@ -133,7 +144,7 @@ React and Angular are both popular JavaScript frameworks for building web applic
 
 ### What are other 5 JS Frameworks other than React?
 
-There are several JavaScript frameworks and libraries for building web applications likes:
+Apart from React, there are several other popular JavaScript frameworks and libraries that are widely used in web development.
 
 - Angular
 - Vue.js
@@ -171,9 +182,23 @@ The **node_modules** folder contains all the dependencies of the project, includ
 
 ### What is the difference between NPM & NPX?
 
+NPM (Node Package Manager) and NPX (Node Package Runner) are both tools that come bundled with Node.js, but they serve different purposes:
+
 ### What is the role of Package.json?
 
+**Package.json** plays a crucial role in managing the project's dependencies, scripts, and other metadata.
+
+- **Project Metadata:** The package.json file contains essential information about the project, such as the project name, version, description, author, license, and repository information.
+- **Dependencies Management:** One of the most important roles of package.json is to manage the project's dependencies. It lists all the external packages and libraries that required by the project, along with their versions.
+- **Scripts:** The package.json file allows you to define scripts, which are command-line shortcuts for various tasks like running the application, running tests, building the project, or performing other custom operations.
+- **Version Management:** The package.json also plays a role in version management. It specifies the version of the project itself, allowing developers to track changes and updates over time.
+- **Project Configuration:** The package.json file can also be used to store configuration settings specific to your project, such as repository URLs, keywords, contributors, and more.
+
 ### What are the difference between package.json & package-lock.json?
+
+The package.json and package-lock.json are both essential files in Node.js projects, but they serve different purposes and have different structures.
+
+The main difference is that package.json used to define metadata about the project and manage project dependencies. It includes information such as the project name, version, description, author, license, and dependencies, while package-lock.json is automatically generated and managed by npm to lock down the exact versions of all dependencies installed in a project, including transitive dependencies, for consistent installations.
 
 ### What is the role of public folder in React?
 
@@ -300,10 +325,6 @@ Functional component is just a simple JavaScript function. it accepts the data i
 The biggest advantage of functional components, it provides a lot of hooks & easy to use. Before supporting hooks it was known as a stateless component.
 
 ### How do you pass data between Functional Components in React?
-
-### What is Prop Drilling in React?
-
-### Why to Avoid Prop Drilling? In how many ways can avoid Prop Drilling?
 
 ### What are Class Components in React?
 
@@ -569,31 +590,47 @@ Both props and state are used to manage and handle data in components, but they 
 
 Prop drilling can become a bad pratice in larger and more complex application because it will produce several issues like maintenance & readability issues, reuseablity issues and performance issues.
 
-We should avoid prop drilling by using advanced technique such as React Context Api or state management libraries like Redux.
+### Why to Avoid Prop Drilling? In how many ways can avoid Prop Drilling?
+
+Prop Drilling can lead to several issues, such as code complexity, performance, and scalability of your React applications so we should avoid it.
+
+To avoid prop drilling, React provides several advanced technique such as React Context API or state management libraries like Redux.
 
 ### What are PropTypes in React?
 
+PropTypes is a built-in internal mechanism in React that used for adding type checking to component props.
+
+PropTypes help catch bugs early by providing warnings in development if the wrong type of data is passed to a component or if a required prop is missing.
+
 ### What are predefined PropTypes in React?
 
-**PropTypes** is React's internal mechanism for adding type checking to component props.
+PropTypes was originally part of the React library but has been moved to a separate package called prop-types since React version 15.5.
 
-We can use the **propTypes** for validating any data we are receiving from props including numbers, strings, functions, objects and arrays.
+- PropTypes.string: Accepts a string value.
+- PropTypes.number: Accepts a number value.
+- PropTypes.bool: Accepts a boolean value.
+- PropTypes.func: Accepts a function value.
+- PropTypes.array: Accepts an array value.
+- PropTypes.object: Accepts an object value.
+- PropTypes.symbol: Accepts a symbol value.
+- PropTypes.node: Accepts any renderable value (string, number, element, or an array of these types).
+- PropTypes.element: Accepts a React element.
+- PropTypes.instanceOf(ClassName): Accepts an instance of a specific class.
+- PropTypes.oneOf([val1, val2]): Accepts a value from a specified list of allowed values.
+- PropTypes.oneOfType([type1, type2]): Accepts a value of any one of the specified types.
+- PropTypes.arrayOf(type): Accepts an array of a specific type.
+- PropTypes.objectOf(type): Accepts an object with property values of a specific type.
+- PropTypes.shape({key: type}): Accepts an object with specific shape.
 
-There are some different type of predefined prop types in React:
+### Why should you validate Props in React?
 
-- PropTypes.string
-- PropTypes.number
-- PropTypes.bool
-- PropTypes.func
-- PropTypes.object
-- PropTypes.array
+Using PropTypes is optional, but it's highly recommended as it helps catch potential bugs early and makes your code more maintainable.
 
-### Why should you Validate Props in React?
+In production builds, the PropTypes checks are stripped out to improve performance.
 
-Props validation is a tool that will help the developers to avoid future bugs and problems.
+### Should we use PropTypes with TypeScript?
 
-- PropType checking can happen only in development mode, enabling you to catch bugs in your React application before releasing it to the production environment.
-- It makes your code more readable.
+When using TypeScript with React, you don't necessarily need to use the built-in prop-types library for type checking, as TypeScript provides its own type system and tooling for static type checking.
 
 ### What is a Children Prop?
 
